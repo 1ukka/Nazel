@@ -1,0 +1,30 @@
+.offers{
+    text-align: center;
+    margin-top: 5.5rem;
+    color: #363F57;
+    font-size: 5rem;
+    font-weight: 550;
+}
+
+.reasons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4.5rem;
+    padding: 0 1rem;
+}
+
+.reasons img{
+    width: 55%;
+    height: 55%;
+    padding-left: 2rem;
+}
+
+.reasons p{
+    font-size: 2rem;
+    font-weight: 500;
+    width: 50%;
+    color: #363F57;
+    margin-top: .6rem;
+    text-align: center;
+}

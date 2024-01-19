@@ -1,0 +1,70 @@
+.header{
+    align-items: center;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+}
+
+.logo{
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #363F57;
+    cursor: pointer;
+}
+
+.content ul{
+    display: flex;
+    list-style: none;
+    cursor: pointer;
+    color: #363F57;
+}
+
+.content ul li{
+    margin-left: 20px;
+    font-size: larger;
+}
+
+.content ul :hover{
+    color: white;
+}
+
+.buttonh {
+    --c:  white; /*the color*/
+    box-shadow: 0 0 0 .1em inset var(--c); 
+    --_g: linear-gradient(var(--c) 0 0) no-repeat;
+    background: 
+      var(--_g) calc(var(--_p,0%) - 100%) 0%,
+      var(--_g) calc(200% - var(--_p,0%)) 0%,
+      var(--_g) calc(var(--_p,0%) - 100%) 100%,
+      var(--_g) calc(200% - var(--_p,0%)) 100%;
+    background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+    outline-offset: .1em;
+    transition: background-size .4s, background-position 0s .4s;
+  }
+  .buttonh:hover {
+    --_p: 100%;
+    transition: background-position .4s, background-size 0s;
+    color: #fff;
+    --c:  #363F57;
+  }
+  .buttonh:active {
+    box-shadow: 0 0 9e9q inset #0009; 
+    background-color: var(--c);
+    color: #fff;
+  }
+  .buttonh {
+    font-family: system-ui, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 8px;
+    font-weight: bold;  
+    border: none;
+    color: #363F57;
+    
+  }
