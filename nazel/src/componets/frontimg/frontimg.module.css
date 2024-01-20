@@ -73,11 +73,13 @@ button {
   justify-content: center;
   align-items: center;
   margin-top: 374px;
+  transition: transform 1s ease;
 }
 
 .busimg{
   width: 900px;
   height: 300px;
+  right: 0;
 }
 
 

@@ -13,7 +13,7 @@ export const Feedback = () => {
         </div>
         <div className={styles.reasons}>
           <div className={styles.classify}>
-            <img src={classify} alt="classify" />
+            <img src={classify} alt="classify"/>
             <p>Classify What Around You</p>
           </div>
           <div className={styles.currentLocation}>
