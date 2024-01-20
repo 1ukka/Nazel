@@ -35,10 +35,12 @@ export const Map = () => {
     <div>
       <Header/>
       <div className={styles.mapheader}>The Map Shows Your Current Location</div>
+      <div className={styles.mapcontent}>
+        <div className={styles.search}></div>
       <div className={styles.MapContainer}>
         <MapContainer
-          center={{ lat: 51.505, lng: -0.09 }}
-          zoom={13}
+          center={{ lat: 33.312805, lng: 44.361488 }}
+          zoom={15}
           scrollWheelZoom={false}
           className={styles.map}
         >
@@ -49,6 +51,8 @@ export const Map = () => {
           <LocationMarker />
         </MapContainer>
       </div>
+      </div>
+      
     </div>
   );
 };
