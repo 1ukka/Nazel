@@ -9,7 +9,7 @@ export const Frontimg = () => {
   const handleGetStarted = () => {
     setClicked(true);
     setTimeout(() => {
-      navigate("/map");
+      navigate("/Map");
     }, 1500);
   };
   return (

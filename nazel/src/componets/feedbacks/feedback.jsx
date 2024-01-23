@@ -13,14 +13,14 @@ export const Feedback = () => {
         </div>
         <div className={styles.reasons}>
           <div className={styles.classify}>
-            <img src={classify} alt="classify"/>
+            <img src={classify} alt="classify" />
             <p>Classify What Around You</p>
           </div>
-          <div className={styles.currentLocation}>
+          <div className={styles.classify}>
             <img src={currentLocation} alt="currentLocation" />
             <p>Gives You Your Current Location</p>
           </div>
-          <div className={styles.rightDirection}>
+          <div className={styles.classify}>
             <img src={rightDirection} alt="rightDirection" />
             <p>Provide The Right Direction For You</p>
           </div>

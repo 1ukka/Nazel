@@ -11,6 +11,7 @@ import {
 } from "react-router-dom"
 import { Map } from './componets/map/map'
 import { EveryThing } from './componets/everyThing/everyThing'
+import { About } from './componets/about/about'
 
 function App() {
 
@@ -19,8 +20,8 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<EveryThing/>} />
-      <Route path="/map" element={<Map/>} />
-      <Route path="About" element={<EveryThing/>} />
+      <Route path="/Map" element={<Map/>} />
+      <Route path="/About" element={<About/>} />
     </Routes>
     </BrowserRouter>
     </>
