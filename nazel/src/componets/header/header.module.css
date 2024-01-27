@@ -68,3 +68,21 @@
     color: #363F57;
     
   }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1); /* Adjust this value to control the intensity of the pulse */
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .logo:hover {
+    animation: pulse 1s ease-in-out infinite;
+  }
+  
+  

@@ -27,7 +27,7 @@ export const Frontimg = () => {
           </button>
         </div>
       </div>
-      <div className={styles.handlebusimg} style={{ transform: clicked ? 'translateX(100%)' : 'translateX(0)', transition: 'transform 3.4s ease' }}>
+      <div className={styles.handlebusimg} style={{ transform: clicked ? 'translateX(100%)' : 'translateX(0)', transition: 'transform 3s ease' }}>
   <img className={styles.busimg} src={busimg} alt="busimg" />
 </div>
     </div>

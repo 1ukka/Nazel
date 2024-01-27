@@ -1,10 +1,5 @@
 import './App.css'
-import { Feedback } from './componets/feedbacks/feedback'
-import { Footer } from './componets/footer/footer'
-import { Frontimg } from './componets/frontimg/frontimg'
-import { Header } from './componets/header/header'
 import {
-  createBrowserRouter,
   BrowserRouter,
   Route,
   Routes,
@@ -12,6 +7,7 @@ import {
 import { Map } from './componets/map/map'
 import { EveryThing } from './componets/everyThing/everyThing'
 import { About } from './componets/about/about'
+import { ContactUs } from './componets/contactus/contactUs'
 
 function App() {
 
@@ -22,6 +18,7 @@ function App() {
       <Route path="/" element={<EveryThing/>} />
       <Route path="/Map" element={<Map/>} />
       <Route path="/About" element={<About/>} />
+      <Route path="/ContactUs" element={<ContactUs/>} />
     </Routes>
     </BrowserRouter>
     </>

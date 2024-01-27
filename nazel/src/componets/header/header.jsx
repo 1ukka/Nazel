@@ -10,6 +10,13 @@ export const Header = () => {
 const handleHome = () => {
   navigate("/");
 }
+
+const handlecontact = () => {
+  navigate("/ContactUs");
+}
+const handleMap = () => {
+  navigate("/Map");
+}
   return (
     <div className={styles.header}>
       <Container>
@@ -18,8 +25,9 @@ const handleHome = () => {
           <div className={styles.info}>
             <ul>
               <li><button onClick={handleHome} className={styles.buttonh}>HOME</button></li>
+              <li><button onClick={handleMap} className={styles.buttonh}>MAP</button></li>
               <li><button onClick={handleAbout} className={styles.buttonh}>ABOUT</button></li>
-              <li><button className={styles.buttonh}>CONTACT US</button></li>
+              <li><button onClick={handlecontact} className={styles.buttonh}>CONTACT US</button></li>
             </ul>
           </div>
         </div>

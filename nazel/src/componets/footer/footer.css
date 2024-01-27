@@ -132,3 +132,14 @@ ul {
     color: #dd4b39;
   }
 
+@media screen and (max-width: 920px){
+    .icons{
+        flex-direction: column;
+    }
+    ul li a{
+        margin: 0;
+    }
+    .footertext{
+        font-size: 20px;
+    }
+}

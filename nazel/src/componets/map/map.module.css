@@ -26,6 +26,15 @@
   color: #363F57;
 }
 
+.coordinates{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  color: #363F57;
+
+}
+
 .MapContainer{
   display: flex;
   justify-content: center;
