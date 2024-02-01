@@ -10,6 +10,7 @@ import {
   Circle,
 } from "react-leaflet";
 import { Header } from "../header/header";
+import { Coordinates } from "./coordents";
 
 export const Map = () => {
   const [popupPosition, setPopupPosition] = useState(null);
@@ -23,19 +24,10 @@ export const Map = () => {
   const moveEndTimeout = useRef();
   const mapRef = useRef();
 
-  const polylineName = "طريق باب الشرجي";
-  const polylineCoordinates = [
-    [33.33644994166809, 44.400345692721565],
-    [33.333892513925385, 44.39773444570118],
-    [33.32995084128615, 44.39238183506308],
-    [33.329005684044816, 44.393816735236356],
-    [33.32616133032055, 44.38806784396837],
-  ];
-
   const handleSearch = async (e) => {
-    if (e.key === 'Enter' && e.target.value) {
+    if (e.key === "Enter" && e.target.value) {
       const query = e.target.value;
-      const iraqBoundingBox = "38.7937,37.3807,48.5769,29.0694"; 
+      const iraqBoundingBox = "38.7937,37.3807,48.5769,29.0694";
       const url = `https://nominatim.openstreetmap.org/search?format=json&q=${query}&viewbox=${iraqBoundingBox}&bounded=1`;
       try {
         const response = await fetch(url);
@@ -44,15 +36,14 @@ export const Map = () => {
           const { lat, lon } = data[0];
           mapRef.current.flyTo([lat, lon], 16);
         } else {
-          alert('Location not found.');
+          alert("Location not found.");
         }
       } catch (error) {
-        console.error('Error searching for location:', error);
-        alert('Failed to search for location.');
+        console.error("Error searching for location:", error);
+        alert("Failed to search for location.");
       }
     }
   };
-  
 
   function LocationMarker() {
     const map = useMapEvents({
@@ -74,7 +65,7 @@ export const Map = () => {
           circleCoordinatesRef.current = currentCenter;
           if (!currentCenter.equals(position)) {
             setShowCircle(true);
-            setCoordinatesChanged(!coordinatesChanged); 
+            setCoordinatesChanged(!coordinatesChanged);
           }
           if (moveEndTimeout.current) {
             clearTimeout(moveEndTimeout.current);
@@ -98,20 +89,25 @@ export const Map = () => {
   }
 
   const addVectorLayer = () => {
-    return (
+    // Fetch routes data from the Coordinates function
+    const routesData = Coordinates();
+    // Dynamically create polyline layers based on fetched routes data
+    return routesData.map((route, index) => (
       <Polyline
+        key={index} // Ensure each polyline has a unique key
         pathOptions={{ color: "#363F57" }}
-        positions={polylineCoordinates}
+        positions={route["lat and lon"]} // Corrected the property access
         eventHandlers={{
           click: (e) => {
-            setSelectedPolylineName(polylineName);
-            setShowPolylineCard(true); 
-            setPopupPosition(e.latlng); 
+            setSelectedPolylineName(route.route_name); // Use name from fetched data
+            setShowPolylineCard(true);
+            setPopupPosition(e.latlng);
           },
         }}
       />
-    );
+    ));
   };
+
   const handleReset = () => {
     if (mapRef.current && position) {
       mapRef.current.setView(position, 16);
